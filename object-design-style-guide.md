@@ -14,4 +14,5 @@ Value objects are completely different:
 - Much smaller (just one or two properties)
 - Represent part/aspect of an entity
 - Wrap one or more primitive-type values
+
 If we want to transform it to some other value, we should just instantiate a new copy, which represents the modified value.
