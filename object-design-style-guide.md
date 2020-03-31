@@ -2,7 +2,7 @@
 
 By Matthias Noback.
  
-- [1 Programming with objects: A primer](#1-programming-with-objects:-a-primer)
+- [1 Programming with objects A primer](#1-programming-with-objects-a-primer)
 - [2 Creating services](#2-creating-services)
 - [3 Creating other objects](#3-creating-other-objects)
 - [4 Manipulating objects](#4-manipulating-objects)
@@ -10,6 +10,9 @@ By Matthias Noback.
 - [6 Retrieving information](#6-retrieving-information)
 - [7 Performing tasks](#7-performing-tasks)
 
+## 1 Programming with objects A primer
+## 2 Creating services
+## 3 Creating other objects
 ## 4 Manipulating objects
 ### 4.1 Entities: Identifiable objects that track changes and record events
 - An entity needs to be identifiable. When creating it, we give it an identifier.
