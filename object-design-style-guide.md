@@ -9,7 +9,7 @@ By Matthias Noback.
 5. [Using objects](#using-objects)
 6. [Retrieving information](#retrieving-information)
 
-[7. Performing tasks](#7.-performing-tasks)
+[Performing tasks](#performing-tasks)
 
 ## 4. Manipulating objects
 ### 4.1 Entities: Identifiable objects that track changes and record events
@@ -24,7 +24,7 @@ Value objects are completely different:
 
 If we want to transform it to some other value, we should just instantiate a new copy, which represents the modified value.
 
-## 7. Performing tasks
+## Performing tasks
 ### 7.1 Use command methods with a name in the imperative form
 - The name of such a method should indicate that the client can order the object to perform the task that the method name indicates.
 - When looking for a good name, you should always use the imperative form.
