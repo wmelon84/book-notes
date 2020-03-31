@@ -8,7 +8,8 @@ By Matthias Noback.
 4. [Manipulating objects](#manipulating-objects)
 5. [Using objects](#using-objects)
 6. [Retrieving information](#retrieving-information)
-7. [Performing tasks](#performing-tasks)
+
+[7. Performing tasks](#7.-performing-tasks)
 
 ## 4. Manipulating objects
 ### 4.1 Entities: Identifiable objects that track changes and record events
