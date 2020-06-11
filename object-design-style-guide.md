@@ -11,8 +11,11 @@ By Matthias Noback.
 - [7 Performing tasks](#7-performing-tasks)
 
 ## 1 Programming with objects A primer
+> TODO
 ## 2 Creating services
+> TODO
 ## 3 Creating other objects
+> TODO
 ## 4 Manipulating objects
 ### 4.1 Entities: Identifiable objects that track changes and record events
 - An entity needs to be identifiable. When creating it, we give it an identifier.
