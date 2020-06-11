@@ -36,11 +36,11 @@ If we want to transform it to some other value, we should just instantiate a new
 
 ### 7.2 Limit the scope of a command method, and use events to perform secondary tasks
 - When performing a task, make sure you don’t do too much in one method.
-- Use events as the link between commands that belong together but we don't want the client to call explicitly and we don't want to mix them in one method. (Is there any native implementation of event dispatcher in Java?)
+- Use events as the link between commands that belong together, but we don't want the client to call explicitly, and we don't want to mix them in one method. (Is there any native implementation of event dispatcher in Java?)
 - A possible disadvantage of using events is that the primary action and its secondary effects may be implemented in remote parts of the code base.
 
 ### 7.3 Make services immutable from the outside as well as on the inside
-- Make sure none of your services update internal state that influences its behavior like this.
+- Make sure none of your services update internal state influences its behavior like this.
 
 ### 7.4 When something goes wrong, throw an exception
 - The same rule for retrieving information also counts for performing tasks: when some- thing goes wrong, don’t return a special value to indicate it; throw an exception instead.
