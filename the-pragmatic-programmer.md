@@ -1,15 +1,15 @@
 # The Pragmatic Programmer: “YOUR JOURNEY TO MASTERY”
 by Andrew Hunt and David Thomas
 
-- [Programming with objects A primer](#programming-with-objects-a-primer)
-- [Creating services](#creating-services)
-- [The Basic Tools](#the-basic-tools)
-- [Pragmatic Paranoia](#pragmatic-paranoia)
-- [Bend, or Break](#bend,-or-break)
-- [Concurrency](#concurrency)
-- [While You Are Coding](#while-you-are-coding)
-- [Before the Project](#before-the-project)
-- [Pragmatic Projects](#pragmatic-projects)
+- [1 Programming with objects A primer](#1-programming-with-objects-a-primer)
+- [2 Creating services](#2-creating-services)
+- [3 The Basic Tools](#3-the-basic-tools)
+- [4 Pragmatic Paranoia](#4-pragmatic-paranoia)
+- [5 Bend, or Break](#5-bend,-or-break)
+- [6 Concurrency](#6-concurrency)
+- [7 While You Are Coding](#7-while-you-are-coding)
+- [8 Before the Project](#8-before-the-project)
+- [9 Pragmatic Projects](#9-pragmatic-projects)
 
 ## 1 Programming with objects A primer
 > TODO
