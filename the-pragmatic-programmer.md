@@ -1,8 +1,8 @@
 # The Pragmatic Programmer: “YOUR JOURNEY TO MASTERY”
 by Andrew Hunt and David Thomas
 
-- [1 Programming with objects A primer](#1-programming-with-objects-a-primer)
-- [2 Creating services](#2-creating-services)
+- [1 A Pragmatic Philosophy](#1-a-pragmatic-philosophy)
+- [2 A Pragmatic Approach](#2-a-pragmatic-approach)
 - [3 The Basic Tools](#3-the-basic-tools)
 - [4 Pragmatic Paranoia](#4-pragmatic-paranoia)
 - [5 Bend, or Break](#5-bend,-or-break)
@@ -11,9 +11,9 @@ by Andrew Hunt and David Thomas
 - [8 Before the Project](#8-before-the-project)
 - [9 Pragmatic Projects](#9-pragmatic-projects)
 
-## 1 Programming with objects A primer
+## 1 A Pragmatic Philosophy
 > TODO
-## 2 Creating services
+## 2 A Pragmatic Approach
 > TODO
 ## 3 The Basic Tools
 > TODO
@@ -44,7 +44,7 @@ The purpose of a software development method is to help people work together.
  - The team works on more than just new features. Some possible examples include:
    - Old Systems Maintenance: there’s likely maintenance work needs to be done.
    - Process Reflection and Refinement: continuous improvement can only happen when you take the time to look around, 
-   figure out what’s working and not, and then make changes
+   figure out what’s working and not, and then make changes.
    - New tech experiments: put tasks on the schedule to try the new things and analyze results.
    - Learning and skill improvements: many skills are more effective when spread team-wide.
 > Tip 85 Schedule It to Make It Happen
@@ -74,9 +74,9 @@ Do not invest in the superficial artifacts.
 #### The Real Goal
  - The goal is to deliver working software that gives the users some new capability at a moment’s notice.
 > Tip 88 Deliver When Users Need It
- - For continuos delivery you need a solid infrastructure
+ - For continuous delivery you need a solid infrastructure
 ### Topic 51 Pragmatic Starter Kit
-These are the three legs that support every project: Version Control, Regression Testing and Full Automation
+These are the three legs that support every project: Version Control, Regression Testing and Full Automation.
 #### Drive with Version Control
  - Keep everything needed to build your project under version control.
  - Deployment configuration is under version control as well.
@@ -93,7 +93,7 @@ These are the three legs that support every project: Version Control, Regression
 > Tip 92 Use Saboteurs to Test Your Testing
  - What is important is the number of states that your program may have. States are not equivalent to lines of code.
 > Tip 93 Test State Coverage, Not Code Coverage
-#### Tightening the Net
+#### Tightening the Net
 > Tip 94 Find Bugs Once
 #### Full Automation
 > Tip 95 Don’t Use Manual Procedures
