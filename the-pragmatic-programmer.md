@@ -5,7 +5,7 @@ by Andrew Hunt and David Thomas
 - [2 A Pragmatic Approach](#2-a-pragmatic-approach)
 - [3 The Basic Tools](#3-the-basic-tools)
 - [4 Pragmatic Paranoia](#4-pragmatic-paranoia)
-- [5 Bend, or Break](#5-bend,-or-break)
+- [5 Bend, or Break](#5-bend-or-break)
 - [6 Concurrency](#6-concurrency)
 - [7 While You Are Coding](#7-while-you-are-coding)
 - [8 Before the Project](#8-before-the-project)
