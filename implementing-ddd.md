@@ -6,6 +6,7 @@ by Vaughn Vernon
 - [Chapter 3 Context Maps](#chapter-3-context-maps)
 - [Chapter 4 Architecture](#chapter-4-architecture)
 - [Chapter 5 Entities](#chapter-5-entities)
+- [Chapter 6 Value Objects](#chapter-6-value-objects)
 
 
 ## Chapter 1 Getting Started with DDD
@@ -48,7 +49,8 @@ DDD is not always the best fit. If a concept can be modeled as a Value, maybe it
 ### Unique Identity
 
 >"Rather than focusing on the attributes or even the behavior, strip the Entity object’s definition down to the most 
-> intrinsic characteristics, particularly those that identify it or are commonly used to find or match it. Add only behavior that is essential to the concept and attributes that are required by that behavior."
+> intrinsic characteristics, particularly those that identify it or are commonly used to find or match it. Add only 
+> behavior that is essential to the concept and attributes that are required by that behavior."
 
 An Entity’s unique identity may or may not also be practical for finding or matching. It will depend on wether it is 
 human-readable or not.
@@ -122,3 +124,47 @@ There is no need for the domain identity to play the role of database pri- mary 
 The identity of an entity must be immutable during its lifetime.
 It can be achieved by hiding the setter methods and by adding guard clauses to avoid assigning invalid values (null),
 even to the entity itself.
+
+## Chapter 6 Value Objects
+
+Value Objects are a vital building block of DDD.
+
+> **Know the Value Advantages**
+>
+> Value types that measure, quantify, or describe things are easier to create, test, use, optimize, and maintain.
+
+To determine if a domain concept should be modeled as a Value, we have to pay close attention to its characteristics:
+
+### Value Characteristics
+
+#### Measures, Quantifies, or Describes
+A concept that measures, quantifies, or otherwise describes a thing in the domain.
+
+#### Immutable
+A Value is unchangeable after it has been created.
+
+#### Conceptual Whole
+A Value Object may possess just one, a few, or a number of individual attributes, each of which is related to the others.
+
+#### Replaceability
+The entire Value is completely replaced with a new Value that does represent the currently correct whole when 
+
+#### Value Equality
+Equality is determined by comparing the types of both objects and then their attributes.
+
+#### Side-Effect-Free Behavior
+A _function_ is an operation of an object that produces output but without modifying its own state.
+Query some info or return a new instance of the value object with the previous state plus the new or modified content.
+
+### Integrate with Minimalism
+We must find appropriate ways to integrate multiple Bounded Contexts.
+
+> Where possible use Value Objects to model concepts in the downstream Context when objects from the upstream Context
+> flow in.
+
+
+
+### Standard Types Expressed as Values
+### Testing Value Objects
+### Implementation
+### Persisting Value Objects
