@@ -18,7 +18,8 @@ There are three things you are going to have to understand very clearly:
 - What your Bounded Contexts are
 
 ### Big Picture
-A Domain is what an organization does, and the world it does it in. Each organization has **its own unique realm of know-how** and way of doing things.
+A Domain is what an organization does, and the world it does it in. 
+Each organization has **its own unique realm of know-how** and way of doing things.
 That realm of understanding is its **Domain**.
 
 #### Subdomains and Bounded Contexts at Work
@@ -49,10 +50,11 @@ DDD is not always the best fit. If a concept can be modeled as a Value, maybe it
 ### Unique Identity
 
 >"Rather than focusing on the attributes or even the behavior, strip the Entity object’s definition down to the most 
-> intrinsic characteristics, particularly those that identify it or are commonly used to find or match it. Add only 
+> intrinsic characteristics, particularly those that identify it or are commonly used to find or match it. 
+> Add only 
 > behavior that is essential to the concept and attributes that are required by that behavior."
 
-An Entity’s unique identity may or may not also be practical for finding or matching. It will depend on wether it is 
+An Entity’s unique identity may or may not also be practical for finding or matching. It will depend on if it is 
 human-readable or not.
 
 Value Objects can serve as holders of unique identity because they are immutable.
@@ -124,6 +126,13 @@ There is no need for the domain identity to play the role of database pri- mary 
 The identity of an entity must be immutable during its lifetime.
 It can be achieved by hiding the setter methods and by adding guard clauses to avoid assigning invalid values (null),
 even to the entity itself.
+
+### Discovering Entities and Their Intrinsic Characteristics
+The Ubiquitous Language must be developed through careful discussion with domain experts.
+In the end the Language is modeled by your code, and it may be difficult or impossible to keep documentation in sync.
+
+#### Uncovering Entities and Properties
+
 
 ## Chapter 6 Value Objects
 
