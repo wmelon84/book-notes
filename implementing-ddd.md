@@ -10,7 +10,8 @@ by Vaughn Vernon
 
 
 ## Chapter 1 Getting Started with DDD
-> TODO
+- [ ] TODO
+
 ## Chapter 2 Domains, Subdomains, and Bounded Contexts
 There are three things you are going to have to understand very clearly:
 - What your Domain is
@@ -26,13 +27,14 @@ That realm of understanding is its **Domain**.
 #### Focus on the Core Domain
 
 ### Why Strategic Design Is So Incredibly Essential
-> TODO
+- [ ] TODO
 
 ## Chapter 3 Context Maps
-> TODO
+- [ ] TODO
 
 ## Chapter 4 Architecture
-> TODO
+- [ ] TODO
+
 ## Chapter 5 Entities
 
 Instead of designing domain concepts with rich behaviors, we might think primarily about the attributes (columns) and 
@@ -153,7 +155,8 @@ A concept that measures, quantifies, or otherwise describes a thing in the domai
 A Value is unchangeable after it has been created.
 
 #### Conceptual Whole
-A Value Object may possess just one, a few, or a number of individual attributes, each of which is related to the others.
+A Value Object may possess just one, a few, or a number of individual attributes, each of which is related to the 
+others.
 
 #### Replaceability
 The entire Value is completely replaced with a new Value that does represent the currently correct whole when 
@@ -171,9 +174,33 @@ We must find appropriate ways to integrate multiple Bounded Contexts.
 > Where possible use Value Objects to model concepts in the downstream Context when objects from the upstream Context
 > flow in.
 
-
+Integrate minimizing the number of properties that you assume responsibility for managing in your downstream model.
+When you can, choose Value Objects to model integrations.
+This advice is applicable in many cases when consuming remote Standard Types.
 
 ### Standard Types Expressed as Values
+
+Standard Types are descriptive objects that indicate the types of things.
+They are also called a _type_ _code_ and a _lookup_.
+
+Can be understood as _Enum_ in _Java_ for example? The possible values that an attribute can have?
+
+Depending on the level of standardization, these types may be maintained at the application level only, or be escalated 
+in importance to shared corporate databases, or be available through national or international standards bodies.
+
+For the sake of maintenance it is common for Standard Types to natively reside in a separate Context from the models 
+that consume them.
+
 ### Testing Value Objects
+
+> **Best Sample Code**
+> 
+> Here’s one way of thinking about this style of test: If we were writing a user’s manual for the model, we would 
+> provide these tests as the most appropriate code samples for how clients should use this specific domain object.
+- [ ] TODO
+
 ### Implementation
+- [ ] TODO
+
 ### Persisting Value Objects
+- [ ] TODO
