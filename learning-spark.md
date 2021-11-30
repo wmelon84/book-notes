@@ -1,13 +1,16 @@
 # Learning Spark 2nd Edition
 by Jules S. Damji, Brooke Wenig, Tathagata Das, and Denny Lee
 
-- [Chapter 4 Spark SQL and DataFrames: Introduction to Built-in Data Sources](#chapter-4-spark-sql-and-dataframes-introduction-to-built-in-data-sources)
-- [Chapter 8 Structured Streaming](#chapter-8-structured-streaming)
-- [Chapter 9 Building Reliable Data Lakes with Apache Spark](#chapter-9-building-reliable-data-lakes-with-apache-spark)
+- [Chapter 4](#chapter-4) Spark SQL and DataFrames: Introduction to Built-in Data Sources
+- [Chapter 8](#chapter-8) Structured Streaming
+- [Chapter 9](#chapter-9) Building Reliable Data Lakes with Apache Spark
 
 
-## Chapter 4 Spark SQL and DataFrames Introduction to Built-in Data Sources
-## Chapter 8 Structured Streaming
+## Chapter 4
+## Spark SQL and DataFrames Introduction to Built-in Data Sources
+- [ ] TODO
+## Chapter 8
+## Structured Streaming
 
 ### Data Transformations
 
@@ -34,8 +37,10 @@ The life cycle is automatically managed by Spark SQL, but normally is necessary 
 
 ##### Distributed and fault-tolerant state management
 
+- [ ] TODO
 
-## Chapter 9 Building Reliable Data Lakes with Apache Spark
+## Chapter 9
+## Building Reliable Data Lakes with Apache Spark
 
 Processing logic only solves half of the end-to-end problem of building a pipeline.
 The choice of storage solution determines the end-to-end robustness and performance of the data pipeline.  
@@ -112,10 +117,13 @@ databases.
 Apache Spark because it provides key features for DLs:
 - Support for diverse workloads: provides batch processing, ETL operations, SQL workloads, stream processing, and 
 machine learning.
-- Support for diverse workloads: unstructured, semi-structured, and structured file formats. (see [Chapter 4](#chapter-4-spark-sql-and-dataframes-introduction-to-built-in-data-sources))
-- Support for diverse filesystems:
+- Support for diverse workloads: unstructured, semi-structured, and structured file formats.
+(see [Chapter 4](#chapter-4))
+- Support for diverse filesystems: any storage system that supports Hadoop’s FileSystem APIs (de facto standard in the 
+big data ecosystem)
 
 #### Limitations of Data Lakes
+- [ ] TODO
 ### Lakehouses: The Next Step in the Evolution of Storage Solutions
 #### Apache Hudi
 #### Apache Iceberg
