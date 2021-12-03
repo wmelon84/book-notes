@@ -42,17 +42,13 @@ The life cycle is automatically managed by Spark SQL, but normally is necessary 
 ## Chapter 9
 ## Building Reliable Data Lakes with Apache Spark
 
-Processing logic only solves half of the end-to-end problem of building a pipeline.
-The choice of storage solution determines the end-to-end robustness and performance of the data pipeline.  
-In this chapter:
-- Key features of a storage solution.
-- Discuss two broad classes of storage solutions, data‐ bases and data lakes, and how to use Apache Spark with them.
-- Next wave of storage solution, the lakehouses, and explore some 
+Processing logic only solves half of the end-to-end problem of building a pipeline. The choice of storage solution 
+determines the end-to-end robustness and performance of the data pipeline.  
 
 ### The Importance of an Optimal Storage Solution
 
-Properties that are desired in a storage solution:
-- Scalability and performance: should be able to scale to the volume and provide the read/write throughput and latency
+Desired properties in a storage solution:
+- Scalability and performance: able to scale to the volume and provide the read/write throughput and latency
 based on workload.
 - Transaction support: support for ACID (atomicity, consistency, isolation, durability) is essential to ensure the
 quality.
@@ -123,18 +119,104 @@ machine learning.
 big data ecosystem)
 
 #### Limitations of Data Lakes
-- [ ] TODO
+
+Data lakes fail to provide ACID guarantees on:
+- Atomicity and isolation: data is written in a distributed manner so there's no wat to roll back.
+- Consistency: lack of atomicity on failed writes further causes readers to get an inconsistent view of the data.
+
+Work around employed by developers to avoid these limitations have lead to new systems, called _lakehouses_.
+
 ### Lakehouses: The Next Step in the Evolution of Storage Solutions
+
+Combines the best elements of data lakes and data warehouses for OLAP workloads
+- Transaction support: provide ACID guarantees in the presence of concurrent workloads.
+- Schema enforcement and governance: prevent data with an incorrect schema being inserted, table schema can be evolved.
+Data integrity, and robust governance and auditing mechanisms.
+- Support for diverse data types in open formats: can store, refine, analyze, and access all types of data.
+- Support for diverse workloads: variety of tools reading data using open APIs.
+- Support for upserts and deletes: allow data to be concurrently deleted and updated with transactional guarantees.
+- Data governance: data integrity and audit all the data changes for policy compliance.
+
+Common features:
+- Store large volumes of data in structured file formats on scalable filesystems.
+- Transaction log to record a timeline of atomic changes to the data.
+- Use the log to define versions of the table data and provide snapshot isolation guarantees between readers and writers.
+- Support reading/writing using Apache Spark.
+
 #### Apache Hudi
+
+Data storage format that is designed for incremental upserts and deletes over key/value-style data. Combination of 
+columnar formats and row-based formats.
+
 #### Apache Iceberg
+
+Open storage format for huge data sets and focuses on general-purpose data storage that scales to petabytes in a single 
+table and has schema evolution properties.
+
 #### Delta Lake
+
+Open data storage format that provides transactional guarantees and enables schema enforcement and evolution.
+
 ### Building Lakehouses with Apache Spark and Delta Lake
+
+How Delta Lake and Apache Spark can be used to build lakehouses
+
 #### Configuring Apache Spark with Delta Lake
+
+One of the following ways:
+- Set up an interactive shell: depending on spark version, specific version of delta lake changes
+- Set up a standalone Scala/Java project using Maven coordinates: just add the dependency to `pom.xml` file
+
 #### Loading Data into a Delta Lake Table
+
+Migrate existing workloads to delta is very easy, all you need to do is change all the DataFrame read and write 
+operations to use `format("delta")`. 
+
 #### Loading Data Streams into a Delta Lake Table
+
+you can easily modify your existing Structured Streaming jobs to write to and read from a Delta Lake table by setting 
+the format to `"delta"`.
+
+Delta Lake has a few additional advantages over traditional formats like JSON, Parquet, or ORC:
+- It allows writes from both batch and streaming jobs into the same table: advanced metadata management allows both 
+batch and streaming data to be written.
+- It allows multiple streaming jobs to append data to the same table: metadata maintains transaction information for 
+each streaming query.
+- It provides ACID guarantees even under concurrent writes: allows concurrent batch and streaming oper‐ ations to write 
+data with ACID guarantees.
+
 #### Enforcing Schema on Write to Prevent Data Corruption
+
+The schema is recorded as table-level metadata, so all writes to a table can verify whether the data being written has a
+schema compatible. If it is not compatible, an error is thrown and data is not written.
+
 #### Evolving Schemas to Accommodate Changing Data
+
+It is possible that we might want to add this new column to the table and can be done by setting the option 
+`"mergeSchema"` to `"true"`.
+In Spark 3.0, you can also use the SQL DDL command ALTER TABLE to add and modify columns.
+
 #### Transforming Existing Data
+
+`UPDATE`, `DELETE`, and `MERGE` commands are supported using either DataFrames or tables and each of these ensures ACID 
+guarantees.
+
+Real-world use cases:
+- Updating data to fix errors: SQL query or with a Delta Lake table updates can be done programmatically. 
+- Deleting user-related data: exactly the same as with updates.
+- Upserting change data to a table using `merge()`: can upsert changes using the `DeltaTable.merge()` operation, which 
+is based on the MERGE SQL command. If you have a stream, you can continuously apply those changes using a Structured 
+Streaming query.
+- Deduplicating data while inserting using insert-only merge: merge operation in Delta Lake supports an extended syntax:
+delete actions, clause conditions, optional actions and star syntax. For more details and examples see the 
+[documentation](https://docs.delta.io/latest/delta-update.html#upsert-into-a-table-using-merge)
+
 #### Auditing Data Changes with Operation History
+
+All the changes to your Delta Lake table are recorded as commits in the table’s transaction log and every operation is 
+automatically versioned.
+
 #### Querying Previous Snapshots of a Table with Time Travel
-### Summary
+
+You can query previous versioned snapshots of a table by using theDataFrameReader options `versionAsOf` and 
+`timestampAsOf`.
